@@ -11,8 +11,11 @@ function deferred_acceptance(m_prefs,f_prefs)
             if m_matched[h] == 0
                 d = m_prefs[next_m_approach[h],h]
                 if d == 0
-                    m_matched[h] = 0
-                    unchanged_counter += 1
+                    if m_matched[h] == 0
+                        unchanged_counter += 1
+                    else
+                        m_matched[h] = 0
+                    end
                 elseif findfirst(f_prefs[:,d],h) < findfirst(f_prefs[:,d],f_matched[d])
                     if f_matched[d] != 0
                         m_matched[f_matched[d]]=0
