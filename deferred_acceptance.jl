@@ -6,7 +6,7 @@ function deferred_acceptance(m_prefs,f_prefs)
     next_m_approach=ones(Int64,m)
     unchanged_counter = 0
     while unchanged_counter < m
-        unchange_counter = 0
+        unchanged_counter = 0
         for h in 1:m
             if m_matched[h] == 0
                 d = m_prefs[next_m_approach[h],h]
